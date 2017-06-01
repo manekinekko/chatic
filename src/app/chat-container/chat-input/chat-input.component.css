@@ -1,0 +1,9 @@
+:host {
+    padding: 5px;
+    display: flex;
+    border: 1px solid;
+}
+
+input {
+    width: 90%;
+}

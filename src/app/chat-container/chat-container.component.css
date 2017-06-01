@@ -1,0 +1,8 @@
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+app-chat-list {
+    height: 90vh;
+}
