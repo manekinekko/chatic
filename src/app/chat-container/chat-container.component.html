@@ -1,6 +1,6 @@
 <section>
 
-    <app-chat-list></app-chat-list>
-    <app-chat-input></app-chat-input>
+    <app-chat-list [messageList]="thread"></app-chat-list>
+    <app-chat-input (message)="sendMessage($event)"></app-chat-input>
 
 </section>

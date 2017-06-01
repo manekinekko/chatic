@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FirebaseListObservable, AngularFireDatabase } from "angularfire2/database";
 
 @Component({
   selector: 'app-chat-container',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-container.component.css']
 })
 export class ChatContainerComponent implements OnInit {
+  
+  @ViewChild('section') sectionRef;
 
-  constructor() { }
+  thread: FirebaseListObservable<any[]>;
+
+  constructor(private db: AngularFireDatabase) {
+    this.thread = this.db.list('/thread', {
+      query: {
+        orderBy: 'date',
+        limitToLast: 100
+      }
+    });
+  }
 
   ngOnInit() {
+  }
+
+  sendMessage(message) {
+    this.thread.push({
+      avatar: 'https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg',
+      user: 'you',
+      message,
+      date: +new Date()
+    });
   }
 
 }

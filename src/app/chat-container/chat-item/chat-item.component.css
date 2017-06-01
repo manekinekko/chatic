@@ -1,0 +1,25 @@
+:host {
+    border: 1px solid lightgray;
+    display: block;
+    margin: 4px;
+    padding: 4px;
+}
+
+section {
+    display: flex;
+}
+
+img {
+    border-radius: 50%;
+    height: 54px;
+    width: 54px;
+}
+
+.message {
+    display: block;
+}
+
+.date {
+    font-size: 0.9em;
+    color: gray;
+}

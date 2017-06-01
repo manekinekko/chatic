@@ -5,10 +5,12 @@ import {ChatContainerComponent} from './chat-container.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { ChatItemComponent } from './chat-item/chat-item.component';
+import { AngularFireDatabaseModule } from "angularfire2/database";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AngularFireDatabaseModule
   ],
   declarations: [
     ChatContainerComponent,

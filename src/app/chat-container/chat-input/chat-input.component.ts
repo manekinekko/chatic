@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-chat-input',
@@ -7,14 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatInputComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('text') textRef: ElementRef;
+
+  @Output() message: EventEmitter<string>;
+
+  constructor() {
+    this.message = new EventEmitter<string>();
+  }
 
   ngOnInit() {
   }
 
   send(text) {
-    console.log(text);
-    
+    this.message.emit(text);
+    this.textRef.nativeElement.value = '';
   }
 
 }

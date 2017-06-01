@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-chat-list',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatListComponent implements OnInit {
 
-  constructor() { }
+  @Input() messageList;
+
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }
